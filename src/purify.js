@@ -79,6 +79,9 @@ function createDOMPurify(window = getGlobal()) {
     typeof implementation.createHTMLDocument !== 'undefined' &&
     document.documentMode !== 9;
 
+  DOMPurify.TAGS = TAGS;
+  DOMPurify.ATTRS = ATTRS;
+
   /**
     * We consider the elements and attributes below to be safe. Ideally
     * don't add any new ones but feel free to remove unwanted ones.
