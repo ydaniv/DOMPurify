@@ -222,12 +222,14 @@ function createDOMPurify(window = getGlobal()) {
     }
 
     /* Set configuration parameters */
-    ALLOWED_TAGS = 'ALLOWED_TAGS' in cfg
-      ? addToSet({}, cfg.ALLOWED_TAGS)
-      : DEFAULT_ALLOWED_TAGS;
-    ALLOWED_ATTR = 'ALLOWED_ATTR' in cfg
-      ? addToSet({}, cfg.ALLOWED_ATTR)
-      : DEFAULT_ALLOWED_ATTR;
+    ALLOWED_TAGS =
+      'ALLOWED_TAGS' in cfg
+        ? addToSet({}, cfg.ALLOWED_TAGS)
+        : DEFAULT_ALLOWED_TAGS;
+    ALLOWED_ATTR =
+      'ALLOWED_ATTR' in cfg
+        ? addToSet({}, cfg.ALLOWED_ATTR)
+        : DEFAULT_ALLOWED_ATTR;
     FORBID_TAGS = 'FORBID_TAGS' in cfg ? addToSet({}, cfg.FORBID_TAGS) : {};
     FORBID_ATTR = 'FORBID_ATTR' in cfg ? addToSet({}, cfg.FORBID_ATTR) : {};
     ALLOW_ARIA_ATTR = cfg.ALLOW_ARIA_ATTR !== false; // Default true
@@ -443,9 +445,9 @@ function createDOMPurify(window = getGlobal()) {
     return typeof Node === 'object'
       ? obj instanceof Node
       : obj &&
-          typeof obj === 'object' &&
-          typeof obj.nodeType === 'number' &&
-          typeof obj.nodeName === 'string';
+        typeof obj === 'object' &&
+        typeof obj.nodeType === 'number' &&
+        typeof obj.nodeName === 'string';
   };
 
   /**
